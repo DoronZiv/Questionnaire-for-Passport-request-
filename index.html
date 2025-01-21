@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voiceflow Chatbot</title>
+    <link rel="icon" type="image/x-icon" href="data:image/x-icon;,">
+    <style>
+        body {
+            direction: rtl;
+            text-align: right;
+            font-family: Arial, sans-serif; 
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            
+        }
+        
+        header {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            text-align: right;
+        }
+
+        main {
+            flex: 1;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Chatbot</h1>
+    </header>
+    
+    <main>
+        <p>The chatbot will appear in the bottom right corner.</p>
+    </main>
+
+    <!-- Voiceflow Chatbot Widget -->
+    <script type="text/javascript">
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+                window.voiceflow.chat.load({
+                    verify: { projectID: '676a51d5ee010ff8eba447e8' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production',
+                    autoOpen: true
+                });
+                
+                // Add a small delay before trying to open the chat
+                setTimeout(() => {
+                    if (window.voiceflow && window.voiceflow.chat) {
+                        window.voiceflow.chat.open();
+                    }
+                }, 1000);
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+    </script>
+</body>
+</html> 
